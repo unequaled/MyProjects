@@ -1,0 +1,13 @@
+.inner_cover{
+    position: relative;
+}
+
+#chartdiv{
+    left:-180px;
+    position: relative;
+}
+
+label{
+    left:-75px;
+    position: relative;
+}

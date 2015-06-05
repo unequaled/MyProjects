@@ -1,0 +1,33 @@
+{% extends "base_boostrap.html" %}
+
+{% block title %} Home - {% endblock %}
+     
+{% block script %} 
+   {% load staticfiles %}
+{% endblock %}
+
+{% block header %}
+    <li class="active"><a href="/index/">Home</a></li>
+    <li><a href="/retire/">Retire</a></li>
+    <li><a href="#">Contact</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="inner cover">
+    <h1 class="cover-heading">Andy's website</h1>
+    <p class="lead"></p>
+    <p class="lead">
+        <!-- 
+            <a href="#" class="btn btn-lg btn-default">Learn more</a> 
+        -->
+        </p>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div class="mastfoot">
+        <div class="inner">
+             <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        </div>
+    </div>
+{% endblock %}

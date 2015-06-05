@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- index.html -->
+{% load staticfiles %}
+<html>
+  <head>    
+    <title>{% block title %}{% endblock %} Andy's Space</title>
+    <link type="text/css" href = "{% static 'static/css/style.css' %}" rel='stylesheet'>
+    {% block script %}{% endblock %}
+  </head>
+  <body>
+    <div class="menu">          
+      <!-- Menu -->
+      <ul>
+        <li><a href="/index/" class="css_btn_class">Home</a></li>
+        <li><a href="/retire/" class="css_btn_class">Retire</a></li>
+         
+        <li><a href="#" class="css_btn_class">Help</a></li> 
+        <li><a href="#" class="css_btn_class">Contact</a></li>         
+      </ul>
+    </div>
+    <!-- Main body -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="footer">
+     {% block footer %}{% endblock %}
+    </div>
+  </body>
+</html>
