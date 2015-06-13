@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+      #panel {
+        position: absolute;
+        top: 5px;
+        z-index: 500;
+      }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    {% load staticfiles %}
+	<script type='text/javascript' src={% static 'static/js/trashmap.js' %}></script>
+	<link href="{% static 'static/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	
+  </head>
+  <body>
+    <div class="container container-fluid" id = "panel">
+      <div class="span7 pull-right well">
+    		<form id="form-search" class="form-inline" action="#" method="get">
+    			<select class="span3 form-control" id= "city">
+        			<option selected="selected" value = "0" >select</option>
+        			<option value = "台北市">台北市</option>
+        			<option value = "新北市">新北市</option>
+    			</select>
+    			<select class="span3 form-control" id="district">
+                  <option selected="selected" value = "select">select</option>
+              	</select>
+              <button class="btn btn-primary span3 pull-right" type="submit" id = "get_markers">Search</button>
+    		</form>
+    	</div>
+    </div>
+    <div id="map-canvas"></div>
+  </body>
+</html>
+
