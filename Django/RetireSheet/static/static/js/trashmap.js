@@ -70,13 +70,26 @@ $(document).ready(function(){
         
             for(var i=0;i<trash_data.length;i++){
                 var myLatlng = new google.maps.LatLng(parseFloat(trash_data[i].Lat),parseFloat(trash_data[i].Lng));
-               
+                
+                var contentString = '<ul class="list-group">' +
+                                      '<li class="list-group-item">Car Time:'+trash_data[i].CarTime +'</li>' +
+                                      '<li class="list-group-item">Info:'+ trash_data[i].Info +'</li>' +  
+                                    '</ul>';
+                var infowindow = new google.maps.InfoWindow();
+                
                 var marker = new google.maps.Marker({
                     position: myLatlng,
                     map: map,
-                    title: 'Hello World!'
+                    title: 'Ya!'
                 });
                 
+                google.maps.event.addListener(marker,'click', (function(marker,contentString,infowindow){ 
+                                                                return function() {
+                                                                   infowindow.setContent(contentString);
+                                                                   infowindow.open(map,marker);
+                                                                };
+                                                            })(marker,contentString,infowindow)); 
+                                                                        
                 markers.push(marker);
             }
         });
