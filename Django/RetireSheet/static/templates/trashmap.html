@@ -16,26 +16,27 @@
         z-index: 500;
       }
     </style>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     {% load staticfiles %}
 	<script type='text/javascript' src={% static 'static/js/trashmap.js' %}></script>
+	<script src={% static 'static/js/jquery.cookie.js' %}></script>
 	<link href="{% static 'static/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 	
   </head>
   <body>
     <div class="container container-fluid" id = "panel">
       <div class="span7 pull-right well">
-    		<form id="form-search" class="form-inline" action="#" method="get">
-    			<select class="span3 form-control" id= "city">
+    		<form id="form-search" class="form-inline" method="get" >
+    			<select class="span3 form-control" name = "city" id= "city">
         			<option selected="selected" value = "0" >select</option>
         			<option value = "台北市">台北市</option>
         			<option value = "新北市">新北市</option>
     			</select>
-    			<select class="span3 form-control" id="district">
+    			<select class="span3 form-control" id="district" name = "district">
                   <option selected="selected" value = "select">select</option>
               	</select>
-              <button class="btn btn-primary span3 pull-right" type="submit" id = "get_markers">Search</button>
+              <button class="btn btn-primary span3 pull-right" type="submit" id ="get_markers">Search</button>
     		</form>
     	</div>
     </div>
